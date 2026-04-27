@@ -1,0 +1,272 @@
+/* ════ CONTACT PAGE ════ */
+
+.ct-page {
+    min-height : 100vh;
+    background : #f4f6fb;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ════ HERO ════ */
+.ct-hero {
+    background : linear-gradient(135deg, #0a1a4a 0%, #1a3a8f 60%, #2563eb 100%);
+    padding    : 70px 24px 60px;
+    text-align : center;
+    position   : relative;
+    overflow   : hidden;
+}
+
+.ct-hero::before {
+    content   : "";
+    position  : absolute;
+    inset     : 0;
+    background: radial-gradient(circle at 70% 30%, rgba(37,99,235,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 20% 70%, rgba(245,158,11,0.1) 0%, transparent 50%);
+}
+
+.ct-hero-inner {
+    position : relative;
+    max-width: 600px;
+    margin   : 0 auto;
+}
+
+.ct-hero-badge {
+    display      : inline-block;
+    background   : rgba(255,255,255,0.12);
+    color        : #fff;
+    border       : 1px solid rgba(255,255,255,0.25);
+    padding      : 6px 18px;
+    border-radius: 999px;
+    font-size    : 0.8rem;
+    font-weight  : 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom : 16px;
+}
+
+.ct-hero-title {
+    font-size    : 2.6rem;
+    font-weight  : 800;
+    color        : #fff;
+    margin       : 0 0 12px;
+    letter-spacing: -0.5px;
+}
+
+.ct-hero-sub {
+    font-size: 1rem;
+    color    : rgba(255,255,255,0.72);
+    margin   : 0;
+}
+
+/* ════ MAIN ════ */
+.ct-main {
+    max-width: 1000px;
+    margin   : 0 auto;
+    padding  : 40px 24px 60px;
+}
+
+/* ════ INFO CARDS ════ */
+.ct-info-cards {
+    display              : grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap                  : 16px;
+    margin-bottom        : 36px;
+}
+
+.ct-info-card {
+    background   : #fff;
+    border-radius: 14px;
+    padding      : 24px;
+    text-align   : center;
+    box-shadow   : 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.ct-info-icon {
+    font-size    : 1.8rem;
+    margin-bottom: 10px;
+}
+
+.ct-info-label {
+    font-size    : 0.75rem;
+    font-weight  : 700;
+    color        : #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.ct-info-value {
+    font-size  : 0.9rem;
+    font-weight: 600;
+    color      : #1e2235;
+}
+
+/* ════ FORM + FAQ GRID ════ */
+.ct-grid {
+    display              : grid;
+    grid-template-columns: 1fr 1fr;
+    gap                  : 28px;
+    align-items          : start;
+}
+
+/* ════ FORM ════ */
+.ct-form-card {
+    background   : #fff;
+    border-radius: 16px;
+    padding      : 32px;
+    box-shadow   : 0 2px 16px rgba(0,0,0,0.07);
+}
+
+.ct-form-title {
+    font-size    : 1.2rem;
+    font-weight  : 700;
+    color        : #1e2235;
+    margin       : 0 0 24px;
+}
+
+.ct-form-group {
+    margin-bottom: 18px;
+}
+
+.ct-label {
+    display      : block;
+    font-size    : 0.82rem;
+    font-weight  : 600;
+    color        : #374151;
+    margin-bottom: 7px;
+}
+
+.ct-input {
+    width        : 100%;
+    padding      : 11px 14px;
+    border       : 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    font-size    : 0.9rem;
+    outline      : none;
+    font-family  : inherit;
+    transition   : border 0.2s;
+    box-sizing   : border-box;
+    background   : #fafafa;
+}
+
+.ct-input:focus {
+    border-color: #2563eb;
+    background  : #fff;
+}
+
+.ct-textarea {
+    width        : 100%;
+    padding      : 11px 14px;
+    border       : 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    font-size    : 0.9rem;
+    outline      : none;
+    font-family  : inherit;
+    transition   : border 0.2s;
+    box-sizing   : border-box;
+    resize       : vertical;
+    background   : #fafafa;
+    line-height  : 1.5;
+}
+
+.ct-textarea:focus {
+    border-color: #2563eb;
+    background  : #fff;
+}
+
+.ct-submit-btn {
+    width        : 100%;
+    padding      : 13px;
+    background   : #2563eb;
+    color        : #fff;
+    border       : none;
+    border-radius: 8px;
+    font-size    : 0.95rem;
+    font-weight  : 700;
+    cursor       : pointer;
+    transition   : background 0.2s;
+    font-family  : inherit;
+    margin-top   : 6px;
+}
+
+.ct-submit-btn:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.ct-submit-btn:disabled {
+    opacity: 0.65;
+    cursor : not-allowed;
+}
+
+/* ════ FAQ ════ */
+.ct-faq-section {}
+
+.ct-faq-title {
+    font-size    : 1.2rem;
+    font-weight  : 700;
+    color        : #1e2235;
+    margin       : 0 0 20px;
+}
+
+.ct-faq-list {
+    display       : flex;
+    flex-direction: column;
+    gap           : 10px;
+}
+
+.ct-faq-item {
+    background   : #fff;
+    border-radius: 12px;
+    box-shadow   : 0 2px 8px rgba(0,0,0,0.06);
+    overflow     : hidden;
+    border       : 1.5px solid transparent;
+    transition   : border-color 0.2s;
+}
+
+.ct-faq-item--open {
+    border-color: #2563eb;
+}
+
+.ct-faq-q {
+    width          : 100%;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    padding        : 16px 20px;
+    background     : none;
+    border         : none;
+    cursor         : pointer;
+    font-size      : 0.9rem;
+    font-weight    : 600;
+    color          : #1e2235;
+    text-align     : left;
+    gap            : 12px;
+    font-family    : inherit;
+}
+
+.ct-faq-chevron {
+    font-size : 0.65rem;
+    color     : #9ca3af;
+    flex-shrink: 0;
+}
+
+.ct-faq-item--open .ct-faq-chevron {
+    color: #2563eb;
+}
+
+.ct-faq-a {
+    padding    : 0 20px 16px;
+    font-size  : 0.86rem;
+    color      : #6b7280;
+    line-height: 1.6;
+    margin     : 0;
+    border-top : 1px solid #f3f4f6;
+    padding-top: 12px;
+}
+
+/* ════ RESPONSIVE ════ */
+@media (max-width: 768px) {
+    .ct-hero-title   { font-size: 1.8rem; }
+    .ct-info-cards   { grid-template-columns: 1fr; }
+    .ct-grid         { grid-template-columns: 1fr; }
+    .ct-form-card    { padding: 24px 20px; }
+}

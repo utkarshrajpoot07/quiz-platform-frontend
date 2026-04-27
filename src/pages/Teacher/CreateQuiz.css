@@ -1,0 +1,654 @@
+/* ═══════════════════════════════════════════════════════════
+   CreateQuiz.css  —  cq- prefix
+═══════════════════════════════════════════════════════════ */
+
+/* ════════════════════════════════════════════
+   PAGE WRAPPER
+════════════════════════════════════════════ */
+
+.cq-wrap {
+  padding: 40px 28px 40px 28px;
+  display: flex;
+  justify-content: center;
+  animation: cq-fadein 0.3s ease both;
+}
+
+@keyframes cq-fadein {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* ════════════════════════════════════════════
+   FORM CARD
+════════════════════════════════════════════ */
+
+.cq-card {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+/* ════════════════════════════════════════════
+   CARD HEADER
+════════════════════════════════════════════ */
+
+.cq-card-header {
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.cq-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px 0;
+  display: flex;
+  align-items: center;
+}
+
+.cq-subtitle {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════
+   TAB SWITCHER
+════════════════════════════════════════════ */
+
+.cq-tabs {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.cq-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 13px 16px;
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.cq-tab:hover {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+/* Manual tab active — blue */
+.cq-tab-active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+  background: white;
+}
+
+/* AI tab active — purple override */
+.cq-tab-ai-active {
+  color: #7c3aed;
+  border-bottom-color: #7c3aed;
+  background: white;
+}
+
+/* ════════════════════════════════════════════
+   FORM
+════════════════════════════════════════════ */
+
+.cq-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 28px 28px;
+}
+
+/* ════════════════════════════════════════════
+   FIELD
+════════════════════════════════════════════ */
+
+.cq-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cq-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.cq-req {
+  color: #ef4444;
+}
+
+/* ════════════════════════════════════════════
+   INPUTS
+════════════════════════════════════════════ */
+
+.cq-input {
+  padding: 10px 13px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #111827;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cq-input:focus {
+  border-color: #2563eb;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.cq-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.cq-select {
+  cursor: pointer;
+  appearance: auto;
+}
+
+/* ════════════════════════════════════════════
+   TWO COLUMN ROW
+════════════════════════════════════════════ */
+
+.cq-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ════════════════════════════════════════════
+   FILE UPLOAD
+════════════════════════════════════════════ */
+
+.cq-file-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cq-file-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f3f4f6;
+  border: 1.5px solid #e5e7eb;
+  color: #374151;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.cq-file-label:hover {
+  background: #e5e7eb;
+  border-color: #d1d5db;
+}
+
+.cq-file-input {
+  display: none;
+}
+
+.cq-file-name {
+  font-size: 13px;
+  color: #059669;
+  font-weight: 500;
+}
+
+/* ════════════════════════════════════════════
+   IMAGE PREVIEW
+════════════════════════════════════════════ */
+
+.cq-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cq-preview-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.cq-preview-img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1.5px solid #e5e7eb;
+}
+
+/* ════════════════════════════════════════════
+   SUBMIT BUTTON — shared Manual + AI Save
+════════════════════════════════════════════ */
+
+.cq-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  margin-top: 4px;
+}
+
+.cq-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.38);
+}
+
+.cq-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ════════════════════════════════════════════
+   AI TAB — Banner
+════════════════════════════════════════════ */
+
+.cq-ai-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: linear-gradient(135deg, #f5f3ff, #eff6ff);
+  border: 1.5px solid #ddd6fe;
+  border-radius: 10px;
+  padding: 13px 16px;
+  font-size: 13px;
+  color: #5b21b6;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ════════════════════════════════════════════
+   AI TAB — Generate Button
+════════════════════════════════════════════ */
+
+.cq-ai-generate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  margin-top: 4px;
+}
+
+.cq-ai-generate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
+}
+
+.cq-ai-generate-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Spinner ── */
+
+.cq-ai-spinner {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: cq-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes cq-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ════════════════════════════════════════════
+   AI RESULT SECTION
+════════════════════════════════════════════ */
+
+.cq-ai-result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Divider ── */
+
+.cq-ai-result-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.cq-ai-result-divider::before,
+.cq-ai-result-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.cq-ai-result-divider span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7c3aed;
+  white-space: nowrap;
+  background: #f5f3ff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid #ddd6fe;
+}
+
+/* ════════════════════════════════════════════
+   QUESTIONS HEADER
+════════════════════════════════════════════ */
+
+.cq-ai-questions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.cq-ai-questions-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.cq-ai-questions-hint {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* ════════════════════════════════════════════
+   AI QUESTION CARD
+════════════════════════════════════════════ */
+
+.cq-ai-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cq-ai-qcard {
+  background: #f8faff;
+  border: 1.5px solid #e0e7ff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  transition: border-color 0.2s;
+}
+
+.cq-ai-qcard:hover {
+  border-color: #c7d2fe;
+}
+
+.cq-ai-qcard-editing {
+  background: #fffbeb;
+  border-color: #fbbf24;
+}
+
+/* ── Question header row ── */
+
+.cq-ai-qcard-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cq-ai-qnum {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cq-ai-qtext {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  flex: 1;
+  line-height: 1.45;
+}
+
+.cq-ai-qactions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.cq-ai-qbtn-edit,
+.cq-ai-qbtn-del {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  border: 1px solid #e5e7eb;
+  background: white;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.cq-ai-qbtn-edit:hover {
+  background: #eff6ff;
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.cq-ai-qbtn-del:hover {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+/* ── Options list ── */
+
+.cq-ai-opts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cq-ai-opt {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: #475569;
+  padding: 7px 11px;
+  border-radius: 7px;
+  background: white;
+  border: 1px solid #f1f5f9;
+}
+
+.cq-ai-opt-correct {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #15803d;
+  font-weight: 600;
+}
+
+/* ── Edit mode ── */
+
+.cq-ai-edit-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #d97706;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.cq-ai-edit-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.cq-ai-edit-opt-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cq-ai-radio-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1.5px solid #e5e7eb;
+  background: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  color: #9ca3af;
+}
+
+.cq-ai-radio-label input[type="radio"] {
+  display: none;
+}
+
+.cq-ai-radio-label.selected {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  border-color: #2563eb;
+  color: white;
+}
+
+.cq-ai-edit-btns {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.cq-ai-save-btn,
+.cq-ai-cancel-btn {
+  flex: 1;
+  padding: 9px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.cq-ai-save-btn {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: white;
+}
+
+.cq-ai-save-btn:hover {
+  transform: translateY(-1px);
+}
+
+.cq-ai-cancel-btn {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e5e7eb;
+}
+
+.cq-ai-cancel-btn:hover {
+  background: #e2e8f0;
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  .cq-wrap {
+    padding: 16px 16px 32px;
+  }
+
+  .cq-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cq-card-header,
+  .cq-form {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .cq-tab {
+    font-size: 13px;
+    padding: 11px 10px;
+  }
+
+  .cq-ai-questions-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+}

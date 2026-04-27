@@ -1,0 +1,448 @@
+/* ═══════════════════════════════════════════════════════════
+   TeacherCategory.css
+   All classes prefixed tc- to avoid global conflicts
+═══════════════════════════════════════════════════════════ */
+
+/* ════════════════════════════════════════════
+   PAGE WRAPPER
+════════════════════════════════════════════ */
+
+.tc-wrap {
+  padding: 40px 28px 40px 28px;
+  max-width: 860px;
+  margin: 0 auto;
+  animation: tc-fadein 0.3s ease both;
+}
+
+@keyframes tc-fadein {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* ════════════════════════════════════════════
+   PAGE HEADER
+════════════════════════════════════════════ */
+
+.tc-page-header {
+  margin-bottom: 24px;
+}
+
+.tc-page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px 0;
+  display: flex;
+  align-items: center;
+}
+
+.tc-page-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════
+   ADD ROW
+════════════════════════════════════════════ */
+
+.tc-add-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* ════════════════════════════════════════════
+   INPUT
+════════════════════════════════════════════ */
+
+.tc-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  background: white;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tc-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+/* ════════════════════════════════════════════
+   ADD BUTTON
+════════════════════════════════════════════ */
+
+.tc-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.28);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tc-add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.38);
+}
+
+/* ════════════════════════════════════════════
+   SEARCH
+════════════════════════════════════════════ */
+
+.tc-search-wrap {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.tc-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.tc-search {
+  width: 100%;
+  padding: 10px 14px 10px 38px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  background: white;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.tc-search:focus {
+  border-color: #2563eb;
+}
+
+/* ════════════════════════════════════════════
+   LIST CARD
+════════════════════════════════════════════ */
+
+.tc-list-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.tc-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.tc-list-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.tc-count-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ════════════════════════════════════════════
+   SKELETON
+════════════════════════════════════════════ */
+
+.tc-skeleton {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: tc-shimmer 1.4s infinite;
+  display: block;
+}
+
+@keyframes tc-shimmer {
+  0%   { background-position:  200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ════════════════════════════════════════════
+   CATEGORY LIST
+════════════════════════════════════════════ */
+
+.tc-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.tc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background 0.2s;
+  gap: 12px;
+}
+
+.tc-row:last-child {
+  border-bottom: none;
+}
+
+.tc-row:hover {
+  background: #f8faff;
+}
+
+.tc-row-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.tc-row-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════
+   ROW BUTTONS
+════════════════════════════════════════════ */
+
+.tc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.tc-btn-edit {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.tc-btn-edit:hover {
+  background: #a7f3d0;
+}
+
+.tc-btn-delete {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.tc-btn-delete:hover {
+  background: #fecaca;
+}
+
+/* ════════════════════════════════════════════
+   EMPTY STATE
+════════════════════════════════════════════ */
+
+.tc-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 48px 24px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* ════════════════════════════════════════════
+   MODAL OVERLAY
+════════════════════════════════════════════ */
+
+.tc-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: tc-fadein 0.2s ease;
+}
+
+/* ════════════════════════════════════════════
+   MODAL BOX
+════════════════════════════════════════════ */
+
+.tc-modal {
+  background: white;
+  border-radius: 14px;
+  width: 360px;
+  max-width: 90vw;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: tc-modal-in 0.25s ease;
+  overflow: hidden;
+}
+
+@keyframes tc-modal-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1);    }
+}
+
+.tc-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.tc-modal-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.tc-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.tc-modal-close:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.tc-modal-body {
+  padding: 18px 20px;
+}
+
+.tc-field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.tc-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 20px 18px;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* ════════════════════════════════════════════
+   MODAL BUTTONS
+════════════════════════════════════════════ */
+
+.tc-btn-ghost {
+  background: #f3f4f6;
+  color: #374151;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tc-btn-ghost:hover {
+  background: #e5e7eb;
+}
+
+.tc-btn-danger-solid {
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tc-btn-danger-solid:hover {
+  background: #b91c1c;
+}
+
+/* ════════════════════════════════════════════
+   DELETE MODAL BODY
+════════════════════════════════════════════ */
+
+.tc-delete-body {
+  text-align: center;
+  padding: 24px 20px;
+}
+
+.tc-delete-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.tc-delete-msg {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tc-delete-warn {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  .tc-wrap {
+    padding: 16px 16px 32px 16px;
+  }
+
+  .tc-add-row {
+    flex-direction: column;
+  }
+
+  .tc-add-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+}

@@ -1,0 +1,363 @@
+/* ═══════════════════════════════════════════════════════════
+   GLOBAL LEADERBOARD PAGE
+   Premium design, real data, "You" highlight
+═══════════════════════════════════════════════════════════ */
+
+.gl-page {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0;
+  animation: gl-fadein 0.4s ease both;
+}
+
+@keyframes gl-fadein {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ════════════════════════════════════════════
+   PAGE HEADER
+════════════════════════════════════════════ */
+.gl-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  gap: 16px;
+}
+
+.gl-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.gl-header p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.gl-total-badge {
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════
+   PODIUM — top 3
+════════════════════════════════════════════ */
+.gl-podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 0 20px;
+}
+
+.podium-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  max-width: 180px;
+}
+
+.podium-medal  { font-size: 28px; }
+
+.podium-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  border: 3px solid white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* gold/silver/bronze avatar colors */
+.podium-gold   .podium-avatar { background: linear-gradient(135deg,#fef9c3,#fde047); color:#ca8a04; border-color:#ffd700; }
+.podium-silver .podium-avatar { background: linear-gradient(135deg,#f1f5f9,#e2e8f0); color:#475569; border-color:#cbd5e1; }
+.podium-bronze .podium-avatar { background: linear-gradient(135deg,#fff7ed,#fed7aa); color:#c2410c; border-color:#fb923c; }
+
+.podium-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.podium-score {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+/* podium block (the colored platform) */
+.podium-block {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  margin-top: 4px;
+}
+
+.rank-1 { background: linear-gradient(135deg,#ffd700,#fbbf24); height: 80px; }
+.rank-2 { background: linear-gradient(135deg,#94a3b8,#cbd5e1); height: 60px; }
+.rank-3 { background: linear-gradient(135deg,#fb923c,#fcd34d); height: 48px; }
+
+.podium-rank { font-size: 18px; font-weight: 800; color: white; }
+
+/* "You" on podium */
+.podium-me .podium-avatar {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.25), 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ════════════════════════════════════════════
+   TABLE CARD
+════════════════════════════════════════════ */
+.gl-table-card {
+  background: white;
+  border-radius: 16px;
+  border: 1.5px solid #e5e7eb;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  overflow: hidden;
+}
+
+.gl-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px 14px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.gl-table-header h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.gl-my-rank-badge {
+  font-size: 13px;
+  color: #6b7280;
+  background: #f8faff;
+  border: 1px solid #e0e7ff;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.gl-my-rank-badge strong { color: #2563eb; }
+
+.gl-table-wrap { overflow-x: auto; }
+
+/* ── TABLE ── */
+.gl-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gl-table thead tr {
+  background: #f8faff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.gl-table th {
+  padding: 10px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.th-progress { min-width: 120px; }
+
+/* ── TABLE ROWS ── */
+.gl-row {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background 0.15s;
+}
+
+.gl-row:last-child { border-bottom: none; }
+.gl-row:hover      { background: #f8faff; }
+
+/* "You" row highlight */
+.gl-row-me {
+  background: rgba(37,99,235,0.05) !important;
+  border-left: 3px solid #2563eb;
+}
+
+.gl-row-me:hover { background: rgba(37,99,235,0.08) !important; }
+
+/* ── TABLE CELLS ── */
+.gl-table td { padding: 12px 16px; vertical-align: middle; }
+
+.gl-td-rank { width: 60px; }
+
+.gl-medal     { font-size: 20px; }
+.gl-rank-num  { font-size: 14px; font-weight: 700; color: #6b7280; }
+
+/* student cell */
+.gl-student-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gl-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.gl-student-info {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.gl-student-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* "You" tag */
+.gl-you-tag {
+  font-size: 10px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* score bar */
+.gl-td-bar { min-width: 120px; }
+
+.gl-bar-track {
+  height: 6px;
+  background: #f3f4f6;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.gl-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  min-width: 4px;
+  transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* score */
+.gl-td-score   { white-space: nowrap; }
+.gl-score      { font-size: 15px; font-weight: 700; }
+.gl-score-label { font-size: 12px; color: #9ca3af; }
+
+/* attempts */
+.gl-td-attempts { font-size: 13px; color: #6b7280; white-space: nowrap; }
+
+/* ════════════════════════════════════════════
+   SKELETON
+════════════════════════════════════════════ */
+.skeleton {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  display: block;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.gl-skeleton-row td { padding: 14px 16px; }
+
+/* ════════════════════════════════════════════
+   EMPTY + ERROR STATES
+════════════════════════════════════════════ */
+.gl-empty {
+  text-align: center;
+  padding: 40px 24px;
+  color: #6b7280;
+}
+
+.gl-empty span { font-size: 36px; display: block; margin-bottom: 8px; }
+.gl-empty p    { font-size: 14px; }
+
+.gl-error {
+  text-align: center;
+  padding: 56px 24px;
+  background: white;
+  border-radius: 16px;
+  border: 1.5px dashed #e5e7eb;
+}
+
+.gl-error-icon { font-size: 40px; margin-bottom: 12px; }
+.gl-error h3   { font-size: 18px; font-weight: 700; color: #111827; margin-bottom: 6px; }
+.gl-error p    { font-size: 14px; color: #6b7280; margin-bottom: 16px; }
+
+.gl-retry-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.gl-retry-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .gl-header     { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .gl-header h1  { font-size: 22px; }
+  .gl-podium     { gap: 8px; padding: 0; }
+  .podium-avatar { width: 46px; height: 46px; font-size: 16px; }
+  .podium-name   { font-size: 11px; }
+  .rank-1        { height: 64px; }
+  .rank-2        { height: 50px; }
+  .rank-3        { height: 40px; }
+  .th-progress,
+  .gl-td-bar     { display: none; }  /* hide bar on mobile */
+}

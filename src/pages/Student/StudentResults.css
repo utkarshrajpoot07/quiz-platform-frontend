@@ -1,0 +1,409 @@
+/* ═══════════════════════════════════════════════════════════
+   StudentResults.css  —  prefix: rs-
+═══════════════════════════════════════════════════════════ */
+
+/* ════════════════════════════════════════════
+   PAGE WRAPPER
+════════════════════════════════════════════ */
+
+.results-container {
+  padding:    0 30px 30px 30px;
+  box-sizing: border-box;
+  animation:  rs-in 0.35s ease both;
+}
+
+@keyframes rs-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ════════════════════════════════════════════
+   HEADER
+════════════════════════════════════════════ */
+
+.rs-header {
+  margin-bottom: 24px;
+}
+
+.results-container h1 {
+  font-size:   26px;
+  font-weight: 700;
+  color:       #111827;
+  margin:      0 0 4px 0;
+}
+
+.rs-sub {
+  font-size: 13.5px;
+  color:     #6b7280;
+  margin:    0;
+}
+
+/* ════════════════════════════════════════════
+   STATS
+════════════════════════════════════════════ */
+
+.rs-stats {
+  display:       flex;
+  gap:           14px;
+  margin-bottom: 22px;
+  max-width:     640px;
+}
+
+.rs-stat-card {
+  display:       flex;
+  align-items:   center;
+  gap:           12px;
+  background:    white;
+  border:        1px solid #e5e7eb;
+  border-radius: 12px;
+  padding:       14px 20px;
+  box-shadow:    0 1px 3px rgba(0, 0, 0, 0.07);
+  flex:          1;
+  transition:    0.2s ease;
+}
+
+.rs-stat-card:hover {
+  transform:  translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.rs-stat-icon {
+  font-size:   22px;
+  line-height: 1;
+}
+
+.rs-stat-val {
+  font-size:   22px;
+  font-weight: 700;
+  color:       #111827;
+  line-height: 1;
+}
+
+.rs-stat-label {
+  font-size:  12px;
+  color:      #6b7280;
+  margin-top: 3px;
+}
+
+/* ════════════════════════════════════════════
+   FILTERS
+════════════════════════════════════════════ */
+
+.rs-filters {
+  display:       flex;
+  gap:           8px;
+  margin-bottom: 20px;
+}
+
+.rs-filter-btn {
+  padding:       8px 18px;
+  border-radius: 8px;
+  border:        1.5px solid #e5e7eb;
+  background:    white;
+  font-size:     13px;
+  font-weight:   500;
+  cursor:        pointer;
+  color:         #6b7280;
+  transition:    0.2s ease;
+}
+
+.rs-filter-btn:hover {
+  border-color: #2563eb;
+  color:        #2563eb;
+  background:   #eff6ff;
+}
+
+.rs-filter-btn.active {
+  background:   #2563eb;
+  color:        white;
+  border-color: #2563eb;
+}
+
+/* ════════════════════════════════════════════
+   LIST
+════════════════════════════════════════════ */
+
+.rs-list {
+  display:        flex;
+  flex-direction: column;
+  gap:            14px;
+}
+
+/* ════════════════════════════════════════════
+   CARD
+════════════════════════════════════════════ */
+
+.rs-card {
+  background:    white;
+  border-radius: 14px;
+  padding:       20px 24px;
+  display:       flex;
+  align-items:   center;
+  gap:           20px;
+  border:        1.5px solid #e5e7eb;
+  box-shadow:    0 1px 3px rgba(0, 0, 0, 0.06);
+  transition:    0.22s ease;
+  animation:     card-in 0.3s ease both;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+.rs-card:hover {
+  transform:    translateY(-3px);
+  box-shadow:   0 12px 30px rgba(0, 0, 0, 0.10);
+  border-color: #bfdbfe;
+}
+
+/* ════════════════════════════════════════════
+   GRADE BADGE
+════════════════════════════════════════════ */
+
+.rs-grade {
+  width:           48px;
+  height:          48px;
+  border-radius:   12px;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  font-size:       15px;
+  font-weight:     800;
+  flex-shrink:     0;
+}
+
+.grade-aplus { background: #dcfce7; color: #15803d; }
+.grade-a     { background: #d1fae5; color: #065f46; }
+.grade-b     { background: #dbeafe; color: #1d4ed8; }
+.grade-c     { background: #fef9c3; color: #a16207; }
+.grade-f     { background: #fee2e2; color: #b91c1c; }
+
+/* ════════════════════════════════════════════
+   LEFT
+════════════════════════════════════════════ */
+
+.rs-left {
+  flex:      1;
+  min-width: 0;
+}
+
+.rs-left h3 {
+  margin:        0 0 5px 0;
+  font-size:     16px;
+  font-weight:   700;
+  color:         #111827;
+  white-space:   nowrap;
+  overflow:      hidden;
+  text-overflow: ellipsis;
+}
+
+.rs-date {
+  font-size: 12.5px;
+  color:     #6b7280;
+}
+
+/* ════════════════════════════════════════════
+   CENTER
+════════════════════════════════════════════ */
+
+.rs-center {
+  width:          200px;
+  flex-shrink:    0;
+  display:        flex;
+  flex-direction: column;
+  gap:            6px;
+}
+
+.rs-score {
+  font-size:   20px;
+  font-weight: 700;
+  color:       #111827;
+  margin:      0;
+  line-height: 1;
+}
+
+.rs-score-total {
+  font-size:   14px;
+  font-weight: 400;
+  color:       #6b7280;
+}
+
+.rs-bar-track {
+  width:         100%;
+  height:        8px;
+  background:    #f3f4f6;
+  border-radius: 6px;
+  overflow:      hidden;
+}
+
+.rs-bar-fill {
+  height:        100%;
+  border-radius: 6px;
+  transition:    width 0.8s ease;
+}
+
+.rs-accuracy {
+  font-size:   13px;
+  font-weight: 600;
+  margin:      0;
+}
+
+/* ════════════════════════════════════════════
+   RIGHT
+════════════════════════════════════════════ */
+
+.rs-right {
+  flex-shrink: 0;
+}
+
+.rs-view-btn {
+  background:  white;
+  color:       #2563eb;
+  border:      1.5px solid #bfdbfe;
+  padding:     9px 18px;
+  border-radius: 8px;
+  cursor:      pointer;
+  font-weight: 600;
+  font-size:   13.5px;
+  white-space: nowrap;
+  transition:  0.2s ease;
+}
+
+.rs-view-btn:hover {
+  background:   #eff6ff;
+  border-color: #2563eb;
+  transform:    translateY(-1px);
+}
+
+/* ════════════════════════════════════════════
+   EMPTY STATE
+════════════════════════════════════════════ */
+
+.rs-empty {
+  text-align:    center;
+  padding:       60px 24px;
+  background:    white;
+  border-radius: 14px;
+  border:        1.5px dashed #e5e7eb;
+}
+
+/* ✅ FIX — inline style hataya, class banaya */
+.rs-empty-icon {
+  font-size:     48px;
+  margin-bottom: 12px;
+  display:       block;
+}
+
+.rs-empty h3 {
+  font-size:   18px;
+  font-weight: 700;
+  color:       #111827;
+  margin:      0 0 6px 0;
+}
+
+.rs-empty p {
+  font-size:     14px;
+  color:         #6b7280;
+  margin:        0 0 16px 0;
+}
+
+.rs-btn-primary {
+  background:    linear-gradient(135deg, #2563eb, #1d4ed8);
+  color:         white;
+  border:        none;
+  padding:       10px 24px;
+  border-radius: 10px;
+  cursor:        pointer;
+  font-weight:   600;
+  font-size:     14px;
+  transition:    0.2s ease;
+}
+
+.rs-btn-primary:hover {
+  transform:  translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+/* ════════════════════════════════════════════
+   SKELETON
+════════════════════════════════════════════ */
+
+.skeleton {
+  background:      linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation:       shimmer 1.4s infinite;
+  border-radius:   6px;
+  display:         block;
+}
+
+@keyframes shimmer {
+  0%   { background-position:  200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ✅ FIX — skeleton classes added properly */
+.rs-sk-grade { width: 48px;  height: 48px; border-radius: 12px; flex-shrink: 0; }
+.rs-sk-title { height: 16px; width: 60%;   margin-bottom: 8px;  }
+.rs-sk-date  { height: 12px; width: 35%;   }
+.rs-sk-score { height: 20px; width: 80px;  }
+.rs-sk-bar   { height: 8px;  width: 100%;  border-radius: 6px;  }
+.rs-sk-acc   { height: 13px; width: 90px;  }
+.rs-sk-btn   { height: 38px; width: 110px; border-radius: 8px;  flex-shrink: 0; }
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  .results-container {
+    padding: 0 16px 16px;
+  }
+
+  .rs-stats {
+    flex-wrap: wrap;
+  }
+
+  .rs-stat-card {
+    flex:      1;
+    min-width: 120px;
+  }
+
+  .rs-filters {
+    flex-wrap: wrap;
+  }
+
+  .rs-filter-btn {
+    flex:       1;
+    text-align: center;
+  }
+
+  .rs-card {
+    flex-direction: column;
+    align-items:    flex-start;
+    gap:            14px;
+  }
+
+  .rs-center {
+    width: 100%;
+  }
+
+  .rs-right {
+    width: 100%;
+  }
+
+  .rs-view-btn {
+    width:      100%;
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .rs-stats {
+    flex-direction: column;
+  }
+
+}

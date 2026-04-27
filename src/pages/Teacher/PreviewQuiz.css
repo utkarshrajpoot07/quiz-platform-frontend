@@ -1,0 +1,302 @@
+/* ════════════════════════════════════════════
+   PreviewQuiz.css  —  pq- prefix
+════════════════════════════════════════════ */
+
+/* ════ WRAPPER ════ */
+
+.pq-wrap {
+  max-width: 900px;
+  padding: 40px 28px;
+  margin: 0 auto;
+}
+
+/* ════ BACK BUTTON ════ */
+
+.pq-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1.5px solid #e5e7eb;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pq-back-btn:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* ════ HEADER ════ */
+
+.pq-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.pq-header-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.pq-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px 0;
+}
+
+.pq-desc {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.pq-question-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #1e2235;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ════ META CHIPS ════ */
+
+.pq-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.pq-meta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+}
+
+/* ════ QUESTIONS LIST ════ */
+
+.pq-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ════ QUESTION CARD ════ */
+
+.pq-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid #2563eb;
+  transition: box-shadow 0.2s;
+}
+
+.pq-card:hover {
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
+}
+
+/* Question number + text */
+
+.pq-q-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.pq-q-number {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pq-q-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ════ OPTIONS ════ */
+
+.pq-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pq-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  font-size: 14px;
+  color: #475569;
+  transition: background 0.15s;
+}
+
+/* Correct option highlight */
+
+.pq-option.pq-correct {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.pq-opt-letter {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: #e2e8f0;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.pq-option.pq-correct .pq-opt-letter {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.pq-opt-text {
+  flex: 1;
+}
+
+.pq-correct-icon {
+  color: #16a34a;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* ════ EMPTY STATE ════ */
+
+.pq-empty {
+  background: #f8fafc;
+  border: 2px dashed #e2e8f0;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* ════ ERROR BANNER ════ */
+
+.pq-error-banner {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pq-error-banner button {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: opacity 0.2s;
+}
+
+.pq-error-banner button:hover {
+  opacity: 0.85;
+}
+
+/* ════ SKELETON ════ */
+
+@keyframes pq-shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+
+.pq-skeleton {
+  background: linear-gradient(
+    90deg,
+    #f1f5f9 25%,
+    #e2e8f0 50%,
+    #f1f5f9 75%
+  );
+  background-size: 600px 100%;
+  animation: pq-shimmer 1.4s infinite linear;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+
+.pq-sk-title { height: 32px; width: 55%; }
+.pq-sk-desc  { height: 16px; width: 75%; }
+.pq-sk-meta  { height: 28px; width: 40%; margin-top: 6px; }
+.pq-sk-card  { height: 150px; margin-top: 6px; }
+
+/* ════ RESPONSIVE ════ */
+
+@media (max-width: 600px) {
+
+  .pq-wrap {
+    padding: 20px 16px 32px;
+  }
+
+  .pq-title {
+    font-size: 20px;
+  }
+
+  .pq-card {
+    padding: 16px 16px;
+  }
+
+}

@@ -1,0 +1,377 @@
+/* ════════════════════════════════════════
+   TeacherSettings.css  —  ts- prefix
+════════════════════════════════════════ */
+
+/* ════ WRAPPER ════ */
+
+.ts-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 28px 40px;
+}
+
+/* ════ HEADER ════ */
+
+.ts-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+
+.ts-header p {
+  color: #64748b;
+  font-size: 14px;
+  margin: 0 0 28px;
+}
+
+/* ════ TOAST ════ */
+
+.ts-toast {
+  background: #1e2235;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: ts-fadeIn 0.3s ease;
+}
+
+@keyframes ts-fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ════ ERROR BANNER ════ */
+
+.ts-error-banner {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ts-error-banner button {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.ts-error-banner button:hover {
+  opacity: 0.85;
+}
+
+/* ════ SKELETON ════ */
+
+@keyframes ts-shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+
+.ts-skeleton-header,
+.ts-skeleton-nav,
+.ts-skeleton-panel {
+  background: linear-gradient(
+    90deg,
+    #f1f5f9 25%,
+    #e2e8f0 50%,
+    #f1f5f9 75%
+  );
+  background-size: 600px 100%;
+  animation: ts-shimmer 1.4s infinite linear;
+  border-radius: 12px;
+}
+
+.ts-skeleton-header {
+  height: 56px;
+  margin-bottom: 28px;
+  width: 40%;
+}
+
+.ts-skeleton-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
+}
+
+.ts-skeleton-nav {
+  height: 260px;
+}
+
+.ts-skeleton-panel {
+  height: 380px;
+}
+
+/* ════ GRID ════ */
+
+.ts-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ════ SIDEBAR NAV ════ */
+
+.ts-nav {
+  background: #fff;
+  padding: 14px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ts-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border: none;
+  background: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  text-align: left;
+  width: 100%;
+}
+
+.ts-nav-item svg {
+  font-size: 20px;
+}
+
+.ts-nav-item:hover {
+  background: #f1f5f9;
+  color: #1e40af;
+}
+
+.ts-nav-item.active {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.28);
+}
+
+/* ════ PANEL ════ */
+
+.ts-panel {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  min-height: 360px;
+}
+
+.ts-panel-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+/* ════ FORM ════ */
+
+.ts-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ts-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ts-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.ts-field input {
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  font-size: 14px;
+  font-family: inherit;
+  color: #0f172a;
+  background: #f8fafc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.ts-field input:focus {
+  border-color: #2563eb;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.ts-field input::placeholder {
+  color: #94a3b8;
+}
+
+/* ════ BUTTON ════ */
+
+.ts-btn {
+  margin-top: 6px;
+  padding: 13px 24px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  align-self: flex-start;
+}
+
+.ts-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.35);
+}
+
+.ts-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ════ TOGGLES ════ */
+
+.ts-toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ts-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.ts-toggle-row:last-child {
+  border-bottom: none;
+}
+
+.ts-toggle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ts-toggle-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.ts-toggle-desc {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ── Toggle Switch ── */
+
+.ts-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.ts-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.ts-slider {
+  position: absolute;
+  inset: 0;
+  background: #cbd5e1;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.ts-slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.25s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ts-switch input:checked + .ts-slider {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+}
+
+.ts-switch input:checked + .ts-slider::before {
+  transform: translateX(20px);
+}
+
+/* ════ RESPONSIVE ════ */
+
+@media (max-width: 768px) {
+  .ts-wrapper {
+    padding: 20px 16px 32px;
+  }
+
+  .ts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ts-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ts-nav-item {
+    flex: 1 1 auto;
+    justify-content: center;
+    min-width: 110px;
+  }
+
+  .ts-skeleton-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ts-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

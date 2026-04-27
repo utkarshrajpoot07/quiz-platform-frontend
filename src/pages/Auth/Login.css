@@ -1,0 +1,268 @@
+/* ═══════════════════════════════════════════════════════════
+   Login.css  —  prefix: ln-
+   Production Level — Blue/Purple gradient background
+═══════════════════════════════════════════════════════════ */
+
+/* ════════════════════════════════════════════
+   PAGE WRAPPER
+════════════════════════════════════════════ */
+
+.login-container {
+  min-height:      100vh;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  /* ✅ Same blue/purple gradient as original */
+  background:      linear-gradient(135deg, #1a237e 0%, #4a148c 50%, #1565c0 100%);
+  padding:         24px;
+  animation:       ln-fadein 0.35s ease both;
+}
+
+@keyframes ln-fadein {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ════════════════════════════════════════════
+   CARD
+════════════════════════════════════════════ */
+
+.login-card {
+  background:    white;
+  width:         100%;
+  max-width:     460px;
+  border-radius: 16px;
+  padding:       40px 36px;
+  box-shadow:    0 24px 64px rgba(0, 0, 0, 0.25);
+}
+
+/* ════════════════════════════════════════════
+   HEADER
+════════════════════════════════════════════ */
+
+.login-header {
+  margin-bottom: 32px;
+  text-align:    center;
+}
+
+.login-title {
+  font-size:   28px;
+  font-weight: 700;
+  color:       #111827;
+  margin:      0 0 8px 0;
+}
+
+.login-subtitle {
+  font-size: 15px;
+  color:     #6b7280;
+  margin:    0;
+}
+
+/* ════════════════════════════════════════════
+   FORM
+════════════════════════════════════════════ */
+
+.login-form {
+  display:        flex;
+  flex-direction: column;
+  gap:            20px;
+}
+
+/* ════════════════════════════════════════════
+   FIELD
+════════════════════════════════════════════ */
+
+.ln-field {
+  display:        flex;
+  flex-direction: column;
+  gap:            6px;
+}
+
+.ln-label {
+  display:     flex;
+  align-items: center;
+  gap:         5px;
+  font-size:   13px;
+  font-weight: 600;
+  color:       #374151;
+}
+
+/* ════════════════════════════════════════════
+   INPUT
+════════════════════════════════════════════ */
+
+.ln-input {
+  width:         100%;
+  padding:       13px 16px;
+  border:        1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-size:     15px;
+  color:         #111827;
+  background:    #fafafa;
+  outline:       none;
+  transition:    border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  box-sizing:    border-box;
+  font-family:   inherit;
+}
+
+.ln-input:focus {
+  border-color: #3b82f6;
+  background:   white;
+  box-shadow:   0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.ln-input::placeholder {
+  color: #9ca3af;
+}
+
+/* ════════════════════════════════════════════
+   PASSWORD WRAP
+════════════════════════════════════════════ */
+
+.ln-password-wrap {
+  position: relative;
+}
+
+.ln-password-wrap .ln-input {
+  padding-right: 48px;
+}
+
+.ln-eye-btn {
+  position:      absolute;
+  right:         14px;
+  top:           50%;
+  transform:     translateY(-50%);
+  background:    none;
+  border:        none;
+  cursor:        pointer;
+  color:         #9ca3af;
+  padding:       4px;
+  border-radius: 6px;
+  display:       flex;
+  align-items:   center;
+  transition:    color 0.2s;
+}
+
+.ln-eye-btn:hover {
+  color: #3b82f6;
+}
+
+/* ════════════════════════════════════════════
+   OPTIONS ROW
+════════════════════════════════════════════ */
+
+.ln-options {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             12px;
+  margin-top:      -4px;
+}
+
+.ln-remember {
+  display:     flex;
+  align-items: center;
+  gap:         8px;
+  font-size:   14px;
+  color:       #374151;
+  cursor:      pointer;
+  font-weight: 500;
+}
+
+.ln-remember input[type="checkbox"] {
+  width:        16px;
+  height:       16px;
+  accent-color: #3b82f6;
+  cursor:       pointer;
+}
+
+.ln-forgot {
+  font-size:       14px;
+  color:           #3b82f6;
+  font-weight:     600;
+  text-decoration: none;
+  transition:      color 0.2s;
+}
+
+.ln-forgot:hover {
+  color: #1d4ed8;
+}
+
+/* ════════════════════════════════════════════
+   SUBMIT BUTTON
+════════════════════════════════════════════ */
+
+.ln-submit-btn {
+  width:         100%;
+  padding:       14px 20px;
+  background:    linear-gradient(135deg, #1565c0, #3b82f6);
+  color:         white;
+  border:        none;
+  border-radius: 10px;
+  font-size:     16px;
+  font-weight:   700;
+  cursor:        pointer;
+  transition:    transform 0.2s, box-shadow 0.2s;
+  box-shadow:    0 4px 16px rgba(59, 130, 246, 0.4);
+  font-family:   inherit;
+  letter-spacing: 0.3px;
+}
+
+.ln-submit-btn:hover:not(:disabled) {
+  transform:  translateY(-2px);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.5);
+}
+
+.ln-submit-btn:disabled {
+  opacity:   0.7;
+  cursor:    not-allowed;
+  transform: none;
+}
+
+/* ════════════════════════════════════════════
+   SWITCH LINK
+════════════════════════════════════════════ */
+
+.ln-switch {
+  text-align:  center;
+  font-size:   14px;
+  color:       #6b7280;
+  margin:      0;
+}
+
+.ln-switch a {
+  color:           #3b82f6;
+  font-weight:     600;
+  text-decoration: none;
+}
+
+.ln-switch a:hover {
+  color: #1d4ed8;
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
+
+@media (max-width: 480px) {
+
+  .login-card {
+    padding:       28px 20px;
+    border-radius: 14px;
+  }
+
+  .login-title {
+    font-size: 24px;
+  }
+
+  .ln-input {
+    font-size: 14px;
+    padding:   11px 14px;
+  }
+
+  .ln-submit-btn {
+    font-size: 15px;
+    padding:   12px;
+  }
+
+}

@@ -1,0 +1,277 @@
+/* ═══════════════════════════════════════════════════════════
+   EditQuiz.css  —  prefix: eq-
+═══════════════════════════════════════════════════════════ */
+
+/* ════════════════════════════════════════════
+   PAGE WRAPPER
+════════════════════════════════════════════ */
+
+.eq-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 40px 24px;
+  animation: eq-fadein 0.3s ease both;
+}
+
+@keyframes eq-fadein {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* ════════════════════════════════════════════
+   CARD
+════════════════════════════════════════════ */
+
+.eq-card {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  padding: 32px 28px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+/* ════════════════════════════════════════════
+   HEADER
+════════════════════════════════════════════ */
+
+.eq-header {
+  margin-bottom: 24px;
+}
+
+.eq-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px 0;
+  display: flex;
+  align-items: center;
+}
+
+.eq-subtitle {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════
+   FORM
+════════════════════════════════════════════ */
+
+.eq-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ════════════════════════════════════════════
+   FIELD
+════════════════════════════════════════════ */
+
+.eq-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.eq-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.eq-req {
+  color: #ef4444;
+}
+
+/* ════════════════════════════════════════════
+   INPUTS
+════════════════════════════════════════════ */
+
+.eq-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  background: #fafafa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.eq-input:focus {
+  border-color: #2563eb;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.eq-textarea {
+  resize: none;
+  height: 90px;
+  font-family: inherit;
+}
+
+.eq-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%236b7280' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+/* ════════════════════════════════════════════
+   ROW — 2 columns
+════════════════════════════════════════════ */
+
+.eq-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ════════════════════════════════════════════
+   SCHEDULE
+════════════════════════════════════════════ */
+
+.eq-schedule-wrap {
+  width: 100%;
+}
+
+.eq-schedule-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #1e40af;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* ════════════════════════════════════════════
+   IMAGE PREVIEW
+════════════════════════════════════════════ */
+
+.eq-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #f8faff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.eq-preview-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.eq-preview-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ════════════════════════════════════════════
+   BUTTONS
+════════════════════════════════════════════ */
+
+.eq-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.eq-btn-save {
+  flex: 1;
+  padding: 11px 20px;
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.28);
+}
+
+.eq-btn-save:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.38);
+}
+
+.eq-btn-save:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.eq-btn-cancel {
+  padding: 11px 20px;
+  background: white;
+  color: #374151;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.eq-btn-cancel:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+/* ════════════════════════════════════════════
+   SKELETON
+════════════════════════════════════════════ */
+
+.eq-skeleton {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: eq-shimmer 1.4s infinite;
+  border-radius: 8px;
+}
+
+@keyframes eq-shimmer {
+  0%   { background-position:  200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.eq-sk-title { height: 24px; width: 50%; margin-bottom: 24px; }
+.eq-sk-field { height: 42px; width: 100%; margin-bottom: 12px; }
+.eq-sk-btn   { height: 44px; width: 100%; margin-top: 8px; }
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+
+  .eq-wrap { padding: 16px; }
+
+  .eq-card { padding: 20px 16px; }
+
+  .eq-row  { grid-template-columns: 1fr; }
+
+}

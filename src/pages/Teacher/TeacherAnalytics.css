@@ -1,0 +1,209 @@
+/* ═══════════════════════════════════════════════
+   TeacherAnalytics.css
+   Prefix: an- (no global class conflicts)
+═══════════════════════════════════════════════ */
+
+/* ════════════════════════════════════════════
+   PAGE WRAPPER
+════════════════════════════════════════════ */
+
+.an-wrap {
+  padding: 40px 28px 40px 28px;
+  max-width: 1300px;
+  margin: 0 auto;
+  animation: an-fadein 0.4s ease both;
+}
+
+@keyframes an-fadein {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ════════════════════════════════════════════
+   PAGE HEADER
+════════════════════════════════════════════ */
+
+.an-header {
+  margin-bottom: 28px;
+}
+
+.an-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px 0;
+  display: flex;
+  align-items: center;
+}
+
+.an-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════
+   STAT CARDS
+════════════════════════════════════════════ */
+
+.an-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.an-card {
+  padding: 20px 18px;
+  border-radius: 14px;
+  color: white;
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: default;
+}
+
+.an-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.an-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.an-card-label {
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.an-card-icon {
+  opacity: 0.85;
+}
+
+.an-card-value {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Card color variants */
+
+.an-card1 {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.3);
+}
+
+.an-card2 {
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.3);
+}
+
+.an-card3 {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.3);
+}
+
+.an-card4 {
+  background: linear-gradient(135deg, #ec4899, #db2777);
+  box-shadow: 0 6px 18px rgba(236, 72, 153, 0.3);
+}
+
+/* ════════════════════════════════════════════
+   CHARTS GRID
+════════════════════════════════════════════ */
+
+.an-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ════════════════════════════════════════════
+   CHART CARD
+════════════════════════════════════════════ */
+
+.an-chart-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.an-chart-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.an-chart-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 16px 0;
+}
+
+/* ════════════════════════════════════════════
+   EMPTY STATE
+════════════════════════════════════════════ */
+
+.an-chart-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — TABLET
+════════════════════════════════════════════ */
+
+@media (max-width: 1100px) {
+
+  .an-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .an-charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — MOBILE
+════════════════════════════════════════════ */
+
+@media (max-width: 650px) {
+
+  .an-wrap {
+    padding: 16px 16px 32px 16px;
+  }
+
+  .an-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .an-card {
+    padding: 16px 14px;
+  }
+
+  .an-card-value {
+    font-size: 22px;
+  }
+
+  .an-chart-card {
+    padding: 16px 14px;
+  }
+
+  .an-chart-title {
+    font-size: 14px;
+  }
+
+}

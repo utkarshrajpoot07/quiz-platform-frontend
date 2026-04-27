@@ -1,0 +1,303 @@
+/* ═══════════════════════════════════════════════
+   TeacherDashboard.css
+   All classes prefixed td- to avoid layout conflicts
+   Padding handled here — layout padding set to 0
+═══════════════════════════════════════════════ */
+
+/* ─── PAGE WRAPPER ───────────────────────────── */
+
+.td-wrap {
+  padding: 40px 28px 40px 28px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ─── HEADER — plain, no card box ────────────── */
+
+.td-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  gap: 16px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+.td-greeting {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px 0;
+}
+
+.td-name {
+  color: #2563eb;
+}
+
+.td-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.td-create-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.td-create-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* ─── ERROR BANNER ───────────────────────────── */
+
+.td-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin-bottom: 20px;
+  color: #dc2626;
+  font-size: 14px;
+}
+
+.td-retry {
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.td-retry:hover {
+  background: #b91c1c;
+}
+
+/* ─── STATS GRID ─────────────────────────────── */
+
+.td-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+/* ─── STAT CARD ──────────────────────────────── */
+
+.td-card {
+  background: #1e2235 !important;
+  border-radius: 14px;
+  padding: 18px 16px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 118px;
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: default;
+}
+
+.td-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+}
+
+.td-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.td-card-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.td-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.td-card-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff !important;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.td-card-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: auto;
+}
+
+/* ─── SKELETON ───────────────────────────────── */
+
+.td-skeleton {
+  border-bottom: 3px solid #374151 !important;
+  background: linear-gradient(
+    90deg,
+    #1e2235 25%,
+    #2a3050 50%,
+    #1e2235 75%
+  ) !important;
+  background-size: 200% 100% !important;
+  animation: td-shimmer 1.4s infinite linear;
+}
+
+@keyframes td-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── SECTION ────────────────────────────────── */
+
+.td-section {
+  margin-bottom: 32px;
+}
+
+.td-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 0 0 14px 0;
+}
+
+/* ─── ACTION BUTTONS ─────────────────────────── */
+
+.td-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.td-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: #ffffff;
+  border: none;
+  border-radius: 9px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 148px;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.28);
+}
+
+.td-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.38);
+}
+
+.td-action-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.td-action-btn.outline {
+  background: transparent;
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  box-shadow: none;
+}
+
+.td-action-btn.outline:hover {
+  background: #eff6ff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+/* ─── ANALYTICS EMPTY STATE ──────────────────── */
+
+.td-analytics-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px 0 16px 0;
+  text-align: center;
+}
+
+.td-analytics-hint {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  max-width: 360px;
+  line-height: 1.6;
+}
+
+/* ─── TABLET ─────────────────────────────────── */
+
+@media (max-width: 1100px) {
+  .td-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ─── MOBILE ─────────────────────────────────── */
+
+@media (max-width: 650px) {
+  .td-wrap {
+    padding: 16px 16px 32px 16px;
+  }
+
+  .td-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .td-create-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .td-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .td-actions {
+    flex-direction: column;
+  }
+
+  .td-action-btn {
+    width: 100%;
+  }
+}
